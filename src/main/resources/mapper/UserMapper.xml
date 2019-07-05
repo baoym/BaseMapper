@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 指明当前xml对应的Mapper -->
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <select id="listCount" resultType="Integer">
+      SELECT COUNT(*) FROM "user" ;
+    </select>
+    <select id="findUserById" parameterType="Integer" resultType="User">
+      SELECT * FROM "user" WHERE id=#{id}
+    </select>
+    <select id="selectPageVo" parameterType="Integer" resultType="User">
+      SELECT * FROM "user" WHERE age=#{age}
+    </select>
+</mapper>
